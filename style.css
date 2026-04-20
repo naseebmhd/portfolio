@@ -142,3 +142,13 @@ html {
   background: white;
   color: black;
 }
+.project-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.project-img:hover {
+  transform: scale(1.03);
+}
