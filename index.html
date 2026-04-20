@@ -2,73 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Portfolio</title>
+  <title>Smart To-Do App</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
-  <h2>MyPortfolio</h2>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+<div class="container">
+  <h1>To-Do App</h1>
 
-<section class="hero">
-
-  <h1>Hello, I'm <span id="typing"></span></h1>
-<p>Aspiring Web Developer</p>
-<img src="Profilepic.jpg" class="profile">
-<a href="#" class="btn">Download Resume</a>
-</section>
-
-<section id="about" class="card">
-  <h2>About Me</h2>
-  <p>
-    I'm a BCA student focused on becoming a web developer. 
-    I build modern and responsive web applications.
-  </p>
-</section>
-
-<section id="projects">
-  <h2>Projects</h2>
-
-  <div class="projects-container">
-
-    <div class="project-card">
-      <h3>Smart To-Do App</h3>
-     <p>
-    A task manager with local storage, filtering, and dynamic UI using JavaScript.
-  </p>
-
-      <div class="buttons">
-       <a href="https://naseeb-todo-app.netlify.app" target="_blank">Live</a>
-    <a href="https://github.com/naseebmhd/todo-app" target="_blank">GitHub</a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <h3>Weather App</h3>
-      <p>Weather using API</p>
-      <div class="buttons">
-       <a href="https://yourproject.netlify.app">Live</a>
-       <a href="https://github.com/yourusername/project">GitHub</a>
-      </div>
-    </div>
-
+  <div class="input-section">
+    <input type="text" id="taskInput" placeholder="Enter a task">
+    <button onclick="addTask()">Add</button>
   </div>
 
-</section>
+  <div class="filters">
+    <button onclick="filterTasks('all')">All</button>
+    <button onclick="filterTasks('completed')">Completed</button>
+    <button onclick="filterTasks('pending')">Pending</button>
+  </div>
 
-<section id="contact" class="card">
-  <h2>Contact</h2>
-  <p>Email: naseebkoorithodi792@gmail.com</p>
-<p>Phone no: +91 8891735004</p>
-</section>
+<p id="taskCounter"></p>
+  <ul id="taskList"></ul>
+</div>
 
-<script src="script.js"></script> <!-- IMPORTANT -->
-
+<script src="script.js"></script>
 </body>
 </html>
