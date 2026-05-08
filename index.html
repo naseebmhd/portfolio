@@ -2,74 +2,134 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WackyThreads — Premium streetwear for the bold. Shop oversized tees, gym wear and more.">
+  <title>WackyThreads — Streetwear for the Bold</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
-  <h2>MyPortfolio</h2>
+<!-- NAVBAR -->
+<nav aria-label="Main navigation">
+  <a href="index.html"><img src="images/logo.png" alt="WackyThreads Logo"></a>
   <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#products">Shop</a></li>
+    <li><a href="cart.html">Cart <span id="cart-count">0</span></a></li>
+    <li><a href="about.html">About</a></li>
   </ul>
+  <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
-<section class="hero">
-
-  <h1>Hello, I'm <span id="typing"></span></h1>
-<p>Aspiring Web Developer</p>
-<img src="Profilepic.jpg" class="profile">
-<a href="#" class="btn">Download Resume</a>
+<!-- HERO -->
+<section class="hero" aria-label="Hero">
+  <div class="hero-content">
+    <h1 class="hero-title">WACKY<br>THREADS</h1>
+    <p>Streetwear for the bold.</p>
+    <div class="hero-actions">
+      <button onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Shop Now</button>
+      <a href="about.html"><button class="btn-outline">Our Story</button></a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>↓</span>
+    <small>Scroll</small>
+  </div>
 </section>
 
-<section id="about" class="card">
-  <h2>About Me</h2>
-  <p>
-    I'm a BCA student focused on becoming a web developer. 
-    I build modern and responsive web applications.
-  </p>
+<!-- TRUST BAR -->
+<div class="trust" aria-label="Trust signals">
+  <div class="trust-inner">
+    <span>Free Shipping</span>
+    <span>Easy Returns</span>
+    <span>Premium Quality</span>
+    <span>WhatsApp Orders</span>
+  </div>
+</div>
+
+<!-- COLLECTIONS -->
+<section class="collections">
+  <span class="section-label">Browse by Category</span>
+  <h2>Collections</h2>
+  <div class="collection-grid">
+    <div class="collection-card">
+      <a href="oversized.html">
+        <img src="images/tshirt1.png" alt="Oversized Collection" loading="lazy">
+        <h3>Oversized</h3>
+        <span class="card-arrow">→</span>
+      </a>
+    </div>
+    <div class="collection-card">
+      <a href="gym.html">
+        <img src="images/tshirt2.png" alt="Gym Wear Collection" loading="lazy">
+        <h3>Gym Wear</h3>
+        <span class="card-arrow">→</span>
+      </a>
+    </div>
+  </div>
 </section>
 
-<section id="projects">
-  <h2>Projects</h2>
+<!-- BANNER -->
+<section class="banner" aria-label="Announcement">
+  <h2>🔥 NEW DROP COMING SOON</h2>
+</section>
 
-  <div class="projects-container">
+<!-- FEATURED PRODUCTS -->
+<section class="featured" id="products" aria-label="Featured products">
+  <span class="section-label">Hand-picked for you</span>
+  <h2>Featured</h2>
+  <div class="featured-grid">
 
-    <div class="project-card">
-      <img src="todo.png" class="project-img">
-      <h3>Smart To-Do App</h3>
-     <p>
-    A task manager with local storage, filtering, and dynamic UI using JavaScript.
-  </p>
-
-      <div class="buttons">
-       <a href="https://naseeb-todo-app.netlify.app" target="_blank">Live</a>
-    <a href="https://github.com/naseebmhd/todo-app" target="_blank">GitHub</a>
-      </div>
+    <div class="product">
+      <a href="product.html?name=Oversized%20Tee&price=999&img=images%2Ftshirt1.png">
+        <div class="image-container">
+          <img src="images/tshirt1.png" class="img-front" alt="Oversized Tee" loading="lazy">
+          <img src="images/tshirt1back.png" class="img-back" alt="Oversized Tee back" loading="lazy">
+        </div>
+        <h3>Oversized Tee</h3>
+        <p>₹999</p>
+      </a>
+      <button class="quick-add" onclick="event.stopPropagation(); orderOnWhatsApp('Oversized Tee', 999)">Order</button>
     </div>
 
-    <div class="project-card">
-      <h3>Weather App</h3>
-      <p>Weather using API</p>
-      <div class="buttons">
-       <a href="https://yourproject.netlify.app">Live</a>
-       <a href="https://github.com/yourusername/project">GitHub</a>
-      </div>
+    <div class="product">
+      <a href="product.html?name=Gym%20Fit%20Tee&price=799&img=images%2Ftshirt2.png">
+        <div class="image-container">
+          <img src="images/tshirt2.png" class="img-front" alt="Gym Fit Tee" loading="lazy">
+          <img src="images/tshirt2back.png" class="img-back" alt="Gym Fit Tee back" loading="lazy">
+        </div>
+        <h3>Gym Fit Tee</h3>
+        <p>₹799</p>
+      </a>
+      <button class="quick-add" onclick="event.stopPropagation(); orderOnWhatsApp('Gym Fit Tee', 799)">Order</button>
     </div>
 
   </div>
-
 </section>
 
-<section id="contact" class="card">
-  <h2>Contact</h2>
-  <p>Email: naseebkoorithodi792@gmail.com</p>
-<p>Phone no: +91 8891735004</p>
+<!-- ABOUT SNIPPET -->
+<section class="about-brand">
+  <span class="section-label">Who we are</span>
+  <h2>About WackyThreads</h2>
+  <p>Built for those who stand out. Premium streetwear designed for comfort, confidence, and everyday hustle.</p>
+  <br>
+  <a href="about.html"><button class="btn-outline" style="margin-top:8px;">Read More</button></a>
 </section>
 
-<script src="script.js"></script> <!-- IMPORTANT -->
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 WackyThreads &nbsp;·&nbsp;
+    <a href="https://www.instagram.com/wackythreads.co/" target="_blank" rel="noopener">Instagram</a> &nbsp;·&nbsp;
+    <a href="https://wa.me/919074321767" target="_blank" rel="noopener">WhatsApp</a>
+  </p>
+</footer>
 
+<div id="toast"></div>
+<script src="script.js"></script>
 </body>
 </html>

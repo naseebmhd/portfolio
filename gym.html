@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym Wear — WackyThreads</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav aria-label="Main navigation">
+  <a href="index.html"><img src="images/logo.png" alt="WackyThreads Logo"></a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#products">Shop</a></li>
+    <li><a href="cart.html">Cart <span id="cart-count">0</span></a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<button class="back-btn" onclick="history.back()">← Back</button>
+
+<section class="collection-hero" aria-label="Gym Wear collection hero">
+  <div class="hero-text">
+    <h1>Gym Wear</h1>
+    <p>Performance meets style.</p>
+  </div>
+</section>
+
+<section class="products">
+  <span class="section-label">Gym Collection</span>
+  <h2>All Products</h2>
+
+  <div class="product-grid">
+
+    <div class="product">
+      <a href="product.html?name=Gym%20Fit%20Tee&price=799&img=images%2Ftshirt2.png">
+        <div class="image-container">
+          <img src="images/tshirt2.png" class="img-front" alt="Gym Fit Tee" loading="lazy">
+          <img src="images/tshirt2back.png" class="img-back" alt="Gym Fit Tee back" loading="lazy">
+        </div>
+        <h3>Gym Fit Tee</h3>
+        <p>₹799</p>
+      </a>
+      <button class="quick-add" onclick="event.stopPropagation(); orderOnWhatsApp('Gym Fit Tee', 799)">Order</button>
+    </div>
+
+    <div class="product">
+      <a href="product.html?name=Active%20Wear%20Tee&price=899&img=images%2Ftshirt1.png">
+        <div class="image-container">
+          <img src="images/tshirt1.png" class="img-front" alt="Active Wear Tee" loading="lazy">
+          <img src="images/tshirt1back.png" class="img-back" alt="Active Wear Tee back" loading="lazy">
+        </div>
+        <h3>Active Wear Tee</h3>
+        <p>₹899</p>
+      </a>
+      <button class="quick-add" onclick="event.stopPropagation(); orderOnWhatsApp('Active Wear Tee', 899)">Order</button>
+    </div>
+
+  </div>
+</section>
+
+<div id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>

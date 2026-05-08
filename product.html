@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product — WackyThreads</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav aria-label="Main navigation">
+  <a href="index.html"><img src="images/logo.png" alt="WackyThreads Logo"></a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#products">Shop</a></li>
+    <li><a href="cart.html">Cart <span id="cart-count">0</span></a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<button class="back-btn" onclick="history.back()">← Back</button>
+
+<section class="product-page" aria-label="Product detail">
+  <div class="product-gallery">
+    <img id="product-img" alt="Product image">
+  </div>
+  <div class="product-info">
+    <span class="section-label">WackyThreads</span>
+    <h2 id="product-name"></h2>
+    <p class="product-price" id="product-price"></p>
+
+    <div class="product-badges">
+      <span class="badge">Premium Cotton</span>
+      <span class="badge">Oversized Fit</span>
+      <span class="badge">Breathable Fabric</span>
+      <span class="badge">Free Shipping</span>
+    </div>
+
+    <button onclick="orderOnWhatsApp(
+      document.getElementById('product-name').innerText,
+      document.getElementById('product-price').innerText.replace('₹','').trim()
+    )">Order on WhatsApp</button>
+
+    <button onclick="addToCart()" style="background:transparent; border:1.5px solid rgba(255,255,255,0.25); color:#fff; margin-top:0;">
+      Add to Cart
+    </button>
+  </div>
+</section>
+
+<div id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>

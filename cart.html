@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart — WackyThreads</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav aria-label="Main navigation">
+  <a href="index.html"><img src="images/logo.png" alt="WackyThreads Logo"></a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#products">Shop</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<button class="back-btn" onclick="history.back()">← Back</button>
+
+<main class="cart-page">
+  <h2>Your Cart</h2>
+  <div id="cart-items"></div>
+  <p id="total"></p>
+  <div class="cart-checkout" id="checkout-actions" style="display:none;">
+    <button onclick="checkoutWhatsApp()">Checkout via WhatsApp</button>
+  </div>
+</main>
+
+<div id="toast"></div>
+<script src="script.js"></script>
+<script>
+  // Show checkout button only when cart has items
+  (function() {
+    const actions = document.getElementById("checkout-actions");
+    const c = JSON.parse(localStorage.getItem("cart") || "[]");
+    if (c.length > 0 && actions) actions.style.display = "flex";
+  })();
+
+  function checkoutWhatsApp() {
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    if (!cart.length) return;
+    const items = cart.map(i => `- ${i.name} × ${i.quantity} = ₹${i.price * i.quantity}`).join("\n");
+    const total = cart.reduce((s, i) => s + i.price * i.quantity, 0);
+    const msg = `Hello WackyThreads 👋\n\nI want to place an order:\n\n${items}\n\nTotal: ₹${total}\n\nPlease share payment details.`;
+    window.open(`https://wa.me/919074321767?text=${encodeURIComponent(msg)}`, "_blank");
+  }
+</script>
+</body>
+</html>
